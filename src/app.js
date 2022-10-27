@@ -16,6 +16,7 @@ function displayTemperature(response) {
 
 
 let apiKey = "ft2ff28777530dba3dddb311o0464bef"
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=lagos&key=ft2ff28777530dba3dddb311o0464bef&units=metrics`
+let apiUrl =`https://api.shecodes.io/weather/v1/current?query=lagos&key=ft2ff28777530dba3dddb311o0464bef&units=metric`
+
 
 axios.get(apiUrl).then(displayTemperature);
