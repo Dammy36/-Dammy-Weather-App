@@ -23,6 +23,8 @@ function formatDate(timestamp) {
     let descriptions = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
        let windElement = document.querySelector("#wind");
+       let dateElement = document.querySelector("#date");
+
        
        dateElement.innerHTML = formatDate(response.data.pressure *1000);
 
