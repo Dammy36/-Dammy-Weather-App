@@ -1,4 +1,4 @@
-let apiKey = "2daf65f0cdaa917f11026e8a128ce271"
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q={lagos}&appid={apikey}`
+let apiKey = "ft2ff28777530dba3dddb311o0464bef"
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query={lagos}&key={apiKey}`
 console.log(apiUrl);
 
