@@ -24,15 +24,16 @@ function formatDate(timestamp) {
     let humidityElement = document.querySelector("#humidity");
        let windElement = document.querySelector("#wind");
        let dateElement = document.querySelector("#date");
-
+       let iconElement = document.querySelector("#icon");
        
-       dateElement.innerHTML = formatDate(response.data.pressure *1000);
-
-    windElement.innerHTML= response.data.wind.speed;
-    humidityElement.innerHTML = response.data.temperature.humidity;   
-    descriptions.innerHTML = response.data.condition.description;
-    cityElement.innerHTML = Math.round(response.data.city);
-    temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+       dateElement.innerHTML = formatDate(response.data.pressure * 1000);
+       iconElement.setAttribute("alt", response.data.condition.description);
+       iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+       windElement.innerHTML = response.data.wind.speed;
+       humidityElement.innerHTML = response.data.temperature.humidity;   
+       descriptions.innerHTML = response.data.condition.description;
+       cityElement.innerHTML = response.data.city;
+       temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     
 }
 
