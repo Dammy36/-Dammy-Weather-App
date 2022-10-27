@@ -17,13 +17,12 @@
         <div class="weather-wrapper">
             <div class="weather-app">
                 <div class="weather-view">
-                    <h1>
-                        Lagos
+                    <h1  id="city-temp">                 
                     </h1>
                     <ul>
                         <li>
                             Tuesday 1:25
-                        <li>
+                        <li  id="description">
                             clear
                         </li>
         
@@ -34,7 +33,7 @@
                     <div class="col-6">
                         <div class="flexbox weather-temperature">
                             <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="clear" />
-                            <strong>24</strong><span class="units">°C/<a href="#">°F </a></span>
+                            <strong id="temperature"></strong><span class="units">°C/<a href="#">°F </a></span>
         
                         </div>
                     </div>
@@ -44,10 +43,10 @@
                                 Precipitation:0%
                             </li>
                             <li>
-                                Hummidity:4%
+                                Hummidity:<span id="humidity"></span>
                             </li>
                             <li>
-                                Wind:2 km/h
+                                Wind:<span id="wind">km/h</span> km/h
                             </li>
                         </ul>
                     </div>

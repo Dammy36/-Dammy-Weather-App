@@ -29,7 +29,7 @@ body {
 
 .weather-temperature strong {
     color: blue;
-    font-size: 64;
+    font-size: 64px;
     font-weight: 400;
     line-height: 1;
 }
