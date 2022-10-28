@@ -36,10 +36,20 @@ function formatDate(timestamp) {
        temperatureElement.innerHTML = Math.round(response.data.temperature.current);
     
 }
+function search(city) {
+    let apiKey = "ft2ff28777530dba3dddb311o0464bef";    
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+}
 
+function handlesubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");  
+    search(cityInputElement.value);      
+}
+    
+let form = document.querySelector("#search-engine")
+form.addEventListener("click", handlesubmit)
 
-let apiKey = "ft2ff28777530dba3dddb311o0464bef"
-let apiUrl =`https://api.shecodes.io/weather/v1/current?query=lagos&key=ft2ff28777530dba3dddb311o0464bef&units=metric`
+search("lagos");
 
-
-axios.get(apiUrl).then(displayTemperature);
