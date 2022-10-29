@@ -3,7 +3,7 @@ function formatDate(timestamp) {
     let date = new Date(timestamp);
     let hours = date.getHours();
     if (hours < 10) {
-        minutes`0${hours}`;
+        hours`0${hours}`;
 }
 
     let minutes = date.getMinutes();
@@ -26,7 +26,7 @@ function formatDate(timestamp) {
        let dateElement = document.querySelector("#date");
        let iconElement = document.querySelector("#icon");
        
-       dateElement.innerHTML = formatDate(response.data.pressure * 1000);
+       dateElement.innerHTML = formatDate(response.data.time * 1000);
        iconElement.setAttribute("alt", response.data.condition.description);
        iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
        windElement.innerHTML = response.data.wind.speed;
