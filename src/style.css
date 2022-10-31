@@ -4,7 +4,7 @@ body {
 }
 .bg-image {
     max-width: 800px;
-    padding: 80px auto;
+    padding: 81px auto;
     margin: 50px auto;
     border-radius: 5px;
 }
@@ -17,8 +17,8 @@ body {
 .weather-app {
     border: 1px solid#adade1;    
     margin: 50px auto;
-    border-radius: 5px;
-    padding: 80px;
+    border-radius: 5px auto;
+    padding: 81px auto;
     max-width: 800;
 
 }
@@ -56,6 +56,25 @@ body {
     text-decoration: none;
 }
 
+.weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+}
+
+.date-forcast {
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+.forecast-temperature {
+    font: size 13px;
+}
+
+.forecast-temperature-min {
+    opacity: 0.5;
+}
+
 h1 {
     font-size: 24px;
     font-weight: 100px;
@@ -78,6 +97,7 @@ li {
     padding: 0;
     list-style: none;
     };
+
 li:first-letter{
 text-transform: capitalize;
 }
