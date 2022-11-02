@@ -15,6 +15,32 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
     
+    
+}function displayForecast() {
+    let foreElement = document.querySelector("#forecast");
+    let forecastHTLM = `<div class="row">`;
+    let days = ["MON", "TUE", "WED", "THU", "FRI"];
+    days.forEach(function (day) { 
+        forecastHTLM =
+        forecastHTLM +`       
+
+     
+  <div class="col-2">
+ <div class="date-forecast">${day}</div>                     
+                        
+ <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" alt="" with="42" />
+ <div class="forecast-temperature">
+  <span class="forecast-temperature-max">
+ 18°</span>
+  <span class="forecast-temperature-min">
+  12°</span>
+</div>                        
+  </div>     
+ `;
+    })
+    
+    forecastHTLM = forecastHTLM + `</div>`;
+ foreElement.innerHTML = forecastHTLM;   
 }
 
    function displayTemperature(response) {      
@@ -80,4 +106,4 @@ celsiusLink.addEventListener("click", displayCelsiusTempareture);
 
 
 search("lagos");
-
+displayForecast();
