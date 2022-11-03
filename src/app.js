@@ -53,7 +53,7 @@ function formatDate(timestamp) {
        let iconElement = document.querySelector("#icon");
        
        dateElement.innerHTML = formatDate(response.data.time * 1000);
-       iconElement.setAttribute("alt", response.data.condition.description)
+       iconElement.setAttribute("alt", response.data.condition.description ) 
        iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
        windElement.innerHTML = response.data.wind.speed;
        humidityElement.innerHTML = response.data.temperature.humidity;   
@@ -96,7 +96,7 @@ let celsiusTempareture = null;
     
     
 let form = document.querySelector("#search-engine");
-form.addEventListener("click", handlesubmit);
+form.addEventListener("submit", handlesubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTempareture);
