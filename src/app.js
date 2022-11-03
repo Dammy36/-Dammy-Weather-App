@@ -3,18 +3,18 @@ function formatDate(timestamp) {
     let date = new Date(timestamp);
     let hours = date.getHours();
     if (hours < 10) {
-        hours`0${hours}`;
+        hours= `0${hours}`;
 }
 
     let minutes = date.getMinutes();
     if (minutes < 10) {
-        minutes`0${minutes}`;
+        minutes= `0${minutes}`;
 }
 
     let days = ["Sunday", "Monday", "Tuesday" ,"Wednesday" ,"Thursday" ,"Friday", "Saturday"];
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
-    
+
     
 }function displayForecast() {
     let foreElement = document.querySelector("#forecast");
@@ -53,7 +53,7 @@ function formatDate(timestamp) {
        let iconElement = document.querySelector("#icon");
        
        dateElement.innerHTML = formatDate(response.data.time * 1000);
-       iconElement.setAttribute("alt", response.data.condition.description);
+       iconElement.setAttribute("alt", response.data.condition.description)
        iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
        windElement.innerHTML = response.data.wind.speed;
        humidityElement.innerHTML = response.data.temperature.humidity;   
