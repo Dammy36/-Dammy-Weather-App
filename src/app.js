@@ -17,7 +17,8 @@ function formatDate(timestamp) {
 
     
 }
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily)
     let foreElement = document.querySelector("#forecast");
     let forecastHTLM = `<div class="row">`;
     let days = ["MON", "TUE", "WED", "THU", "FRI"];
@@ -46,9 +47,10 @@ function displayForecast() {
 function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey="ft2ff28777530dba3dddb311o0464bef"
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitute}&lat=${coordinates.latitute}&key=${apiKey}
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}
     &units=metric`
     console.log(apiUrl)
+    axios.get(apiUrl).then(displayForecast);
 }
 
    function displayTemperature(response) {      
@@ -116,4 +118,3 @@ celsiusLink.addEventListener("click", displayCelsiusTempareture);
 
 
 search("lagos");
-displayForecast();
