@@ -98,36 +98,9 @@ function handlesubmit(event) {
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
-function showFahrenheitTempareture(event) {
-    event.preventDefault();
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let fahrenheiTempareture = (celsiusTempareture * 9) / 5 + 32;
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheiTempareture);
-
-}
-
-function displayCelsiusTempareture(event) {
-    event.preventDefault();
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(celsiusTempareture);
-}
-
-let celsiusTempareture = null;
-
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", handlesubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTempareture);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTempareture);
-
 
 search("Lagos")
     
