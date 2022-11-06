@@ -129,4 +129,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTempareture);
 
 
-
+search(Lagos)
+    
