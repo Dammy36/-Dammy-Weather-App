@@ -87,7 +87,7 @@ function displayTemperature(response) {
     getForecast(response.data.coordinates);
 
 }
-function search(city) {
+function searchCity(city) {
     let apiKey = "ft2ff28777530dba3dddb311o0464bef";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemperature);
@@ -96,11 +96,25 @@ function search(city) {
 function handlesubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value);
+    searchCity(cityInputElement.value);
 }
+
+function searchLocation(position){
+    let apiKey = "ft2ff28777530dba3dddb311o0464bef";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coordinates.longitude}&lat=${position.coordinates.latitude}&key=${apiKey}&units=metric` 
+     axios.get(apiUrl).then(displayTemperature);
+}
+
+function getcurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let locationButton = document.querySelectorAll("#current-location");
+locationButton.addEventListener("click", getcurrentLocation);
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", handlesubmit);
 
-search("Lagos")
+searchCity("Lagos")
     
