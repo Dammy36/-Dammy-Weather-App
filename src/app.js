@@ -99,9 +99,10 @@ function handlesubmit(event) {
     searchCity(cityInputElement.value);
 }
 
-function searchLocation(position){
+function searchLocation(position) {
+    console.log(position)
     let apiKey = "ft2ff28777530dba3dddb311o0464bef";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coordinates.longitude}&lat=${position.coordinates.latitude}&key=${apiKey}&units=metric` 
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric` 
      axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -110,7 +111,7 @@ function getcurrentLocation(event) {
     navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let locationButton = document.querySelectorAll("#current-location");
+let locationButton=document.querySelectorAll("#current-location");
 locationButton.addEventListener("click", getcurrentLocation);
 
 let form = document.querySelector("#search-engine");
